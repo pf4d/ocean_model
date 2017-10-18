@@ -1,0 +1,33 @@
+/* DATA DESCRIPTION:
+Citation:	Schaffer, Janin; Timmermann, Ralph (2016): Greenland and Antarctic ice sheet topography, cavity geometry, and global bathymetry (RTopo-2), links to NetCDF files. PANGAEA, https://doi.org/10.1594/PANGAEA.856844, 
+	Supplement to: Schaffer, Janin; Timmermann, Ralph; Arndt, Jan Erik; Kristensen, Steen Savstrup; Mayer, Christoph; Morlighem, Mathieu; Steinhage, Daniel (2016): A global, high-resolution data set of ice sheet topography, cavity geometry, and ocean bathymetry. Earth System Science Data, 8(2), 543-557, https://doi.org/10.5194/essd-8-543-2016
+Abstract:	The ocean plays an important role in modulating the mass balance of the polar ice sheets by interacting with the ice shelves in Antarctica and with the marine-terminating outlet glaciers in Greenland. Given that the flux of warm water onto the continental shelf and into the sub-ice cavities is steered by complex bathymetry, a detailed topography data set is an essential ingredient for models that address ice-ocean interaction. We followed the spirit of the global RTopo-1 data set and compiled consistent maps of global ocean bathymetry, upper and lower ice surface topographies, and global surface height on a spherical grid with now 30?arcsec grid spacing. For this new data set, called RTopo-2, we used the General Bathymetric Chart of the Oceans (GEBCO, 2014) as the backbone and added the International Bathymetric Chart of the Arctic Ocean version 3 (IBCAOv3) and the International Bathymetric Chart of the Southern Ocean (IBCSO) version 1. While RTopo-1 primarily aimed at a good and consistent representation of the Antarctic ice sheet, ice shelves, and sub-ice cavities, RTopo-2 now also contains ice topographies of the Greenland ice sheet and outlet glaciers. In particular, we aimed at a good representation of the fjord and shelf bathymetry surrounding the Greenland continent. We modified data from earlier gridded products in the areas of Petermann Glacier, Hagen Bræ, and Sermilik Fjord, assuming that sub-ice and fjord bathymetries roughly follow plausible Last Glacial Maximum ice flow patterns. For the continental shelf off Northeast Greenland and the floating ice tongue of Nioghalvfjerdsfjorden Glacier at about 79°?N, we incorporated a high-resolution digital bathymetry model considering original multibeam survey data for the region. Radar data for surface topographies of the floating ice tongues of Nioghalvfjerdsfjorden Glacier and Zachariæ Isstrøm have been obtained from the data centres of Technical University of Denmark (DTU), Operation Icebridge (NASA/NSF), and Alfred Wegener Institute (AWI). For the Antarctic ice sheet/ice shelves, RTopo-2 largely relies on the Bedmap-2 product but applies corrections for the geometry of Getz, Abbot, and Fimbul ice shelf cavities.
+Related to:	Overview images (URI: https://www.pangaea.de/helpers/hs.php?s=Maps&d=RTopo-2.0&ID=856844)
+Comment:	To enable communication with RTopo-2 users, the authors would appreciate a notification when using the data sets or errors are found.
+Parameter(s):	File name (File name) * PI: Schaffer, Janin (janin.schaffer@awi.de, http://www.awi.de/en/about-us/organisation/staff/janin-schaffer.html)
+	File format (File format) * PI: Schaffer, Janin (janin.schaffer@awi.de, http://www.awi.de/en/about-us/organisation/staff/janin-schaffer.html)
+	File size [kByte] (File size) * PI: Schaffer, Janin (janin.schaffer@awi.de, http://www.awi.de/en/about-us/organisation/staff/janin-schaffer.html)
+	Uniform resource locator/link to file (URL file) * PI: Schaffer, Janin (janin.schaffer@awi.de, http://www.awi.de/en/about-us/organisation/staff/janin-schaffer.html)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY)
+Size:	76 data points
+*/
+File name	File format	File size [kByte]	URL file
+RTopo-2.0.1_30sec_bedrock_topography	NetCDF	3645508	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_bedrock_topography.nc
+RTopo-2.0.1_30sec_ice_base_topography	NetCDF	3645508	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_ice_base_topography.nc
+RTopo-2.0.1_30sec_surface_elevation	NetCDF	3645508	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_surface_elevation.nc
+RTopo-2.0.1_30sec_aux	NetCDF	2734195	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_aux.nc
+RTopo-2.0.1_coast	ASCII (zipped)	6449	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_coast.zip
+RTopo-2.0.1_isf	ASCII (zipped)	210	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_isf.zip
+RTopo-2.0.1_30sec_Greenland	NetCDF	506498	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_Greenland.nc
+RTopo-2.0.1_30sec_Antarctica_data	NetCDF	2430752	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_Antarctica_data.nc
+RTopo-2.0.1_30sec_Antarctica_aux	NetCDF	607830	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_30sec_Antarctica_aux.nc
+RTopo-2.0.1_1min_data	NetCDF	2734259	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_1min_data.nc
+RTopo-2.0.1_1min_aux	NetCDF	683661	http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_1min_aux.nc
+RTopo-2.0.1_bedrock_topography_Greenland	JPEG	589	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/1_RTopo-2.0.1_bedrock_topography_Greenland.jpg
+RTopo-2.0.1_ice_base_topography_Greenland	JPEG	490	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/2_RTopo-2.0.1_ice_base_topography_Greenland.jpg
+RTopo-2.0.1_surface_elevation_Greenland	JPEG	411	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/3_RTopo-2.0.1_surface_elevation_Greenland.jpg
+RTopo-2.0.1_amask_Greenland	JPEG	412	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/4_RTopo-2.0.1_amask_Greenland.jpg
+RTopo-2.0.1_bedrock_topography_Antarctica	JPEG	549	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/5_RTopo-2.0.1_bedrock_topography_Antarctica.jpg
+RTopo-2.0.1_ice_base_topography_Antarctica	JPEG	492	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/6_RTopo-2.0.1_ice_base_topography_Antarctica.jpg
+RTopo-2.0.1_surface_elevation_Antarctica	JPEG	305	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/7_RTopo-2.0.1_surface_elevation_Antarctica.jpg
+RTopo-2.0.1_amask_Antarctica	JPEG	310	http://hs.pangaea.de/Images/Maps/RTopo-2.0.1/8_RTopo-2.0.1_amask_Antarctica.jpg
