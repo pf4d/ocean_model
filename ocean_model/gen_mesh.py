@@ -51,8 +51,11 @@ m = MeshGenerator(X, Y, msh_name, out_dir)
 # contour is desired.  Parameter "distance_check" is the distance from each node
 # to check for edge intersections which may arise from removing points; 
 # increase the distance if overlaps occur :
-m.create_contour(S, zero_cntr=0.1, skip_pts=0,
-                 distance_check=100, min_nodes=20)
+m.create_contour(S, zero_cntr=0.1, skip_pts=1,
+                 distance_check=50, min_nodes=25)
+
+# if land masses overlap, combine them :
+m.unify_overlapping_contours()
 
 # plot the resulting contours :
 m.plot_contour(legend=False)
@@ -76,7 +79,7 @@ for i in range(num_ctrs):
 # of the edge :
 for i in range(num_ctrs):
   # parameters are respectively: field, ifield, lcMin, lcMax, distMin, distMax
-  m.add_threshold(num_ctrs+i, i, 20000, 10000000, 0, 20000000)
+  m.add_threshold(num_ctrs+i, i, 100000, 10000000, 0, 20000000)
 
 # finialize the creation of the "msh_name".geo file :
 m.finish()
@@ -87,7 +90,6 @@ m.create_mesh()
 
 # convert the "msh_name".msh file to a "msh_name".xml.gz file used by FEniCS :
 m.convert_msh_to_xml()
-
 
 
 
