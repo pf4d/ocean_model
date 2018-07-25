@@ -4,6 +4,10 @@ from pyproj               import Proj, transform
 import numpy                  as np
 import matplotlib.pyplot      as plt
 
+# NOTE: you'll have to download the data from :
+#       http://hs.pangaea.de/Maps/RTopo-2.0.1/RTopo-2.0.1_1min_aux.nc
+#       and put it in the ``../data`` directory.
+
 # get the data :
 data = Dataset('../data/RTopo-2.0.1_1min_aux.nc', 'r')
 mask = data['amask'][:]

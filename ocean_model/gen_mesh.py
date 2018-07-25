@@ -1,7 +1,45 @@
-from gmsh_meshgenerator import MeshGenerator
+"""
+Create a whole-ocean mesh. The final product is a 2D mesh in North polar 
+stereographic projection.
+
+You may need to truncate the input data in order to scale the problem for your
+particular amount of system memory.  The parameter ``n_skip`` can be changed 
+to remove all but every ``n_skip`` elements from the data.  Using ``n_skip = 2`` requires about 20 GB of memory.  Island contours must contain at least five
+nodes.
+
+Using ``n_skip = 2`` and ``skip_pts = 1`` :
+ 
+  Mesh statistics :
+
+    number of islands     : 2517
+    time to mesh 2D plane : 21.4 minutes
+    total time to compute : 31.0 minutes
+    number of elements    : 42,094,019
+    number of vertices    : 20,964,839
+
+Using ``n_skip = 2`` and ``skip_pts = 10`` :
+ 
+  Mesh statistics :
+
+    number of islands     : 420
+    time to mesh 2D plane : 52.98 seconds
+    total time to compute : 136.7 seconds
+    number of elements    : 2,395,834
+    number of vertices    : 1,184,363
+
+  * test system consisted of a Xeon E5-1620 v4 clocked at 3.50GHz.
+"""
+
+from gmsh_meshgenerator import MeshGenerator, print_text
 from pylab              import *
 from netCDF4            import Dataset
 from pyproj             import Proj, transform
+from time               import time
+
+t0 = time() # start the timer
+
+# every other ``n_skip`` data points will be removed :
+n_skip = 2
 
 # get the data :
 data = Dataset('../data/RTopo-2.0.1_1min_aux.nc', 'r')
@@ -10,11 +48,11 @@ lat  = data['lat'][:]
 lon  = data['lon'][:]
 
 # reduce the size of the dataset by 50% for easy plotting :
-mask = np.delete(mask, list(range(0, mask.shape[0], 2)), axis=0)
-mask = np.delete(mask, list(range(0, mask.shape[1], 2)), axis=1)
+mask = np.delete(mask, list(range(0, mask.shape[0], n_skip)), axis=0)
+mask = np.delete(mask, list(range(0, mask.shape[1], n_skip)), axis=1)
 
-lon  = np.delete(lon,  list(range(0, len(lon), 2)))
-lat  = np.delete(lat,  list(range(0, len(lat), 2)))
+lon  = np.delete(lon,  list(range(0, len(lon), n_skip)))
+lat  = np.delete(lat,  list(range(0, len(lat), n_skip)))
 
 # create a grid of lon/lat coordinates :
 LON, LAT = np.meshgrid(lon, lat)
@@ -41,7 +79,7 @@ msh_name = 'crude_mesh'      # name of all outputs
 out_dir  = 'meshes/'         # directory for all outputs
 S        = mask              # mathematical function to contour
 S[S>0.1] = 1.0               # no shelves, etc.
-skip_pts = 1                 # number of contour points to skip
+skip_pts = 10                # number of contour points to skip
 
 # the MeshGenerator instance initialized with the matrix coordinates,
 # output file name, and output directory :
@@ -60,7 +98,7 @@ m.create_contour(S, zero_cntr=0.1, skip_pts=skip_pts,
 if skip_pts > 0:  m.unify_overlapping_contours()
 
 # plot the resulting contours :
-m.plot_contour(legend=False)
+#m.plot_contour(legend=False)
 
 # write the gmsh contour to the "msh_name".geo file with characteristic 
 # cell diameter "lc".  If "boundary_extend"=True, the edge size of the contour 
@@ -91,7 +129,10 @@ m.finish()
 m.create_mesh()
 
 # convert the "msh_name".msh file to a "msh_name".xml.gz file used by FEniCS :
-m.convert_msh_to_xml()
+#m.convert_msh_to_xml()
+
+# display the total compute time :
+print_text("total time to compute: %g seconds" % (time() - t0), 'red', 1)
 
 
 
