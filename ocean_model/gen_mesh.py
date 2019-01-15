@@ -4,7 +4,8 @@ stereographic projection.
 
 You may need to truncate the input data in order to scale the problem for your
 particular amount of system memory.  The parameter ``n_skip`` can be changed 
-to remove all but every ``n_skip`` elements from the data.  Using ``n_skip = 2`` requires about 20 GB of memory.  Island contours must contain at least five
+to remove all but every ``n_skip`` elements from the data.  Using ``n_skip = 2``
+requires about 20 GB of memory.  Island contours must contain at least five
 nodes.
 
 Using ``n_skip = 2`` and ``skip_pts = 1`` :
